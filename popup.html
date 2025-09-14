@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart Scraper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <!-- Top-right corner icons -->
+    <div class="top-icons">
+      <button id="darkModeBtn"  class="icon-btn" title="Toggle Dark Mode">
+        <img src="icons/toggle.png" width="18" />
+      </button>
+      <button id="historyBtn" class="icon-btn" title="View History">
+        <img src="icons/history.png" width="18" />
+      </button>
+    </div>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="modal">
+      <div class="modal-content">
+        <span id="closeHistory" class="close">&times;</span>
+        <h3>Scrape History</h3>
+        <ul id="historyList"></ul>
+        <button id="clearHistory">Clear History</button>
+      </div>
+    </div>
+
+    <h2>Smart Web Scraper</h2>
+
+    <label>Type:</label>
+    <select id="type">
+      <option value="links">Links</option>
+      <option value="images">Images</option>
+      <option value="text">Text</option>
+    </select>
+
+    <label>Filter (keyword/extension):</label>
+    <input type="text" id="filter" placeholder="e.g. pdf, .jpg" />
+
+    <label>Limit:</label>
+    <input type="number" id="limit" min="1" max="100" />
+
+    <!-- Scrape + Copy on same line -->
+    <div class="row">
+      <button id="scrapeBtn">
+        Scrape <img src="icons/scrape.png" width="16" />
+      </button>
+      <button id="copyBtn">Copy <img src="icons/copy.png" width="16" /></button>
+    </div>
+
+    <button id="downloadJsonBtn">
+      Download JSON <img src="icons/download.png" width="16" />
+    </button>
+    <button id="downloadCsvBtn">
+      Download CSV <img src="icons/download.png" width="16" />
+    </button>
+
+    <pre id="output"></pre>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
